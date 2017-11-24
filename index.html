@@ -2,21 +2,26 @@
 <html>
   <head>
     <script type="text/javascript">
-      alert("Welcome!");
-      setTimeOut(3000);
-      alert("This is a revision quiz for the space internal. Try to get 100%!");
-      setTimeOut(3000);
       function Redirect() {
         window.location="https://sites.google.com/s/1lGrDVAsXkB60hP7B92jw3JlY0uKF_eiA/p/1JA7Ob1LH87TQkCm19HaJMnElkI_CNBMu/";
       }
-      if(confirm("Would you like to begin?")) {
-       alert("test");
-      } else {
-        alert("You will be redirected to the main page in 2 seconds")
-        setTimeOut(2000);
-        Redirect();
+      function quiz() {
+        alert("Welcome!");
+        setTimeOut(3000);
+        alert("This is a revision quiz for the space internal. Try to get 100%!");
+        setTimeOut(3000);
+        if(confirm("Would you like to begin?")) {
+        alert("test");
+        } else {
+          alert("You will be redirected to the main page in 2 seconds")
+          setTimeOut(2000);
+          Redirect();
+        }
       }
     <title>QUIZ</title>
   </head>
+  <body>
+      <button onclick="quiz()">Click here to start!</button>
+  </body>
 </html>
     
