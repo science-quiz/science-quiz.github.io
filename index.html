@@ -1,27 +1,83 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script type="text/javascript">
-      function Redirect() {
-        window.location="https://sites.google.com/s/1lGrDVAsXkB60hP7B92jw3JlY0uKF_eiA/p/1JA7Ob1LH87TQkCm19HaJMnElkI_CNBMu/";
-      }
-      function quiz() {
-        alert("Welcome!");
-        setTimeOut(3000);
-        alert("This is a revision quiz for the space internal. Try to get 100%!");
-        setTimeOut(3000);
-        if(confirm("Would you like to begin?")) {
-        alert("test");
-        } else {
-          alert("You will be redirected to the main page in 2 seconds")
-          setTimeOut(2000);
-          Redirect();
+    <script type=text/javascript>
+      const quiz_container = document.getElementById('quiz');
+      const results_container = document.getElementById('results');
+      const submit_button = document.getElementById('submit');
+      const questions = [
+        {
+          question: "What is a spring tide?",
+          answers: {
+            a: "When it's spring and the tide comes in.",
+            b: "When the gravitational pull of the sun counteracts that of the moon.",
+            c: "When the gravitational pull of the sun amplifies that of the moon."
+          },
+          correctAnswer:"c"
+        },
+        {
+          question: "What is a neap tide?",
+          answers: {
+            a: "Pingu on a bad day",
+            b: "When the gravitational pull of the sun counteracts that of the moon.",
+            c: "When ground-dwelling birds' nests are destroyed because of a tide."
+          },
+          correctAnswer:"b"
+        },
+        {
+          question: "How is a high tide caused?",
+          answers: {
+            a: "By the illuminati pumping more water into the sea.",
+            b: "By the moon pulling the water and the earth towards it.",
+            c: "By the earth pulling the moon closer to the water."
+          },
+          correctAnswer:"b"
+        },
+        {
+          question: "What is a king tide?",
+          answers: {
+            a: "A tide that happens when a new king is crowned.",
+            b: "A very high tide.",
+            c: "A tsunami."
+          },
+          correctAnswer:"b"
         }
+      ];
+      function buildQuiz(){
+        const output = [];
+        questions.forEach((currentQuestion, questionNumber) => {
+          
+          const answers = [];
+          for(letter in currentQuestion.answers){
+            answers.push(
+              `<label>
+                <input type = "radio" name="question${questionNumber}" value = "${letter}">
+                ${letter} :
+                ${currentQuestion.answers[letter]}
+               </label>`
+             );
+           }
+           output.push(
+             `<div class="question">${currentQuestion.question}</div>
+              <div class="answers">${answers.join(' ')}</div>`
+            );
+          }
+       );
+       quiz_container.innerHTML=output.join(' ');
+      
+           
       }
-    <title>QUIZ</title>
+      function showResults(){
+        
+      }
+      buildQuiz();
+      submit_button.addEventListener('click', showResults);
   </head>
   <body>
-      <button onclick="quiz()">Click here to start!</button>
+    <div id="quiz"></div>
+    <button id="submit">Submit</button>
+    <div id="results"></div>
+   
   </body>
 </html>
     
