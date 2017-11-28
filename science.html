@@ -3,7 +3,9 @@
   <head>
     <script>
       function check() {
-        alert("Yay it's working!");
+        answer=document.getElementById(a3);
+        if (answer==null){
+          alert("Not quite...");
       }
     </script>
     <title>Science Test</title>
@@ -14,7 +16,6 @@
       <input type="radio" id="a1" name="q1" value="a" checked>When it's spring and the tide comes in<br/>
       <input type="radio" id="a2" name="q1" value="b">When the gravitational pull of the sun counteracts that of the moon<br/>
       <input type="radio" id="a3" name="q1" value="c">When the gravitational pull of the sun amplifies that of the moon<br/>
-      <input type="submit" value="Submit">
     </form>
     <button type="button" onclick="check()">Check answer</button>
     
