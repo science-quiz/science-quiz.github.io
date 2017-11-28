@@ -3,25 +3,38 @@
   <head>
     <script>
       function check() {
-        answer=document.getElementById(a3);
+        var answer=document.getElementById(a3);
         if (answer==false){
-          alert("Not quite...");
+          answer = "Not quite... the answer was 'When the gravitational pull of the sun amplifies that of the moon'.";
         }
         else {
-          alert("Correct!");
-          var q = document.getElementById("question");
-          q.innerHTML = "What is a neap tide?";
+          answer = "Correct! Good job!";
         }
+        var answer2 = document.getElementById(a5);
+        if (answer2==false){
+          answer2 = "Not quite... the anwer was 'When the gravitational pull of the sun counteracts that of the moon'.";
+        }
+        else {
+          answer2 = "Correct! Good job!";
+        }
+        var comments = document.getElementById(feedback);
+        comments.innerHTML = "1. "+answer+"<br />2. "+answer2;
       }
     </script>
     <title>Science Test</title>
   </head>
   <body>
-    <p id="question">What is a spring tide? <br /></p>
+    <p id="question">1. What is a spring tide? <br /></p>
     <input type="radio" id="a1" name="q1" value="a" checked>When it's spring and the tide comes in<br/>
     <input type="radio" id="a2" name="q1" value="b">When the gravitational pull of the sun counteracts that of the moon<br/>
     <input type="radio" id="a3" name="q1" value="c">When the gravitational pull of the sun amplifies that of the moon<br/>
+    <p id="question2">2. What is a neap tide? <br /></p>
+    <input type="radio" id="a4" name="q2" value="a">Pingu on a bad day<br />
+    <input type="radio" id="a5" name="q2" value="b">When the gravitational pull of the sun counteracts that of the moon<br />
+    <input type="radio" id="a6" name="q2" value="c">When ground-dwelling birds' nests get washed away by the tide<br />
+
     <button type="button" onclick="check()">Check answer</button>
+    <p id="feedback"></p>
     
             
   </body>
