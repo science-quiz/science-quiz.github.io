@@ -10,6 +10,7 @@
         else {
           answer = "Correct! Good job!";
         }
+        
         var answer2 = document.getElementById(a5);
         if (answer2==false){
           answer2 = "Not quite... the anwer was 'When the gravitational pull of the sun counteracts that of the moon'.";
@@ -34,7 +35,12 @@
     <input type="radio" id="a6" name="q2" value="c">When ground-dwelling birds' nests get washed away by the tide<br />
 
     <button type="button" onclick="check()">Check answer</button>
-    <p id="feedback"></p>
+    <p id="feedback">
+    <script>
+      document.write(answer+answer2);
+    </script>
+     
+    </p>
     
             
   </body>
