@@ -4,12 +4,12 @@
     <script>
       function check() {
         answer=document.getElementById(a3);
-        if (answer==null){
+        if (answer==""){
           alert("Not quite...");
         }
         else {
           alert("Correct!");
-          const q = document.getElementById("question");
+          var q = document.getElementById("question");
           q.innerHTML = "What is a neap tide?";
         }
       }
