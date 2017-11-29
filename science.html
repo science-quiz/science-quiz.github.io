@@ -18,8 +18,8 @@
         else {
           answer2 = "Correct! Good job!";
         }
-        var comments = document.getElementById(feedback);
-        comments.innerHTML = "1. "+answer+"<br />2. "+answer2;
+        var comments = document.getElementById(feedback1);
+        comments.innerHTML = "1. "+answer;
       }
     </script>
     <title>Science Test</title>
@@ -35,12 +35,7 @@
     <input type="radio" id="a6" name="q2" value="c">When ground-dwelling birds' nests get washed away by the tide<br />
 
     <button type="button" onclick="check()">Check answer</button>
-    <p id="feedback">
-    <script>
-      document.write(answer+answer2);
-    </script>
-     
-    </p>
+    <p id="feedback1"></p>
     
             
   </body>
