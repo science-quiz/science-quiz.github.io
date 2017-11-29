@@ -5,7 +5,7 @@
       var numCorrect = 0;
       function check() {
         var answer=document.getElementById(a3);
-        if (document.getElementById(a3).checked){
+        if (document.getElementById(a3).checked===false || document.getElementById(a3)===null){
           alert("Not quite... the answer was 'When the gravitational pull of the sun amplifies that of the moon'.");
         }
         else {
