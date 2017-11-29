@@ -2,24 +2,26 @@
 <html>
   <head>
     <script>
+      var numCorrect = 0
       function check() {
         var answer=document.getElementById(a3);
         if (answer==false){
           answer = "Not quite... the answer was 'When the gravitational pull of the sun amplifies that of the moon'.";
+          alert(answer);
         }
         else {
-          answer = "Correct! Good job!";
+          numCorrect++;
         }
         
         var answer2 = document.getElementById(a5);
         if (answer2==false){
-          answer2 = "Not quite... the anwer was 'When the gravitational pull of the sun counteracts that of the moon'.";
+          answer2 = "Not quite... the answer was 'When the gravitational pull of the sun counteracts that of the moon'.";
+          alert(answer2);
         }
         else {
-          answer2 = "Correct! Good job!";
+          numCorrect++;
         }
-        var comments = document.getElementById(feedback1);
-        comments.innerHTML = "1. "+answer;
+        
       }
     </script>
     <title>Science Test</title>
